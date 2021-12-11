@@ -1,0 +1,506 @@
+@import "../scss/vendor";
+@import "../scss/var.scss";
+@import "../scss/mixin";
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+h2 {
+  font-family: "Nunito", sans-serif;
+  color: $main-color;
+  font-weight: 800;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.8rem;
+  line-height: 150%;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.main_header {
+  width: 100vw;
+  line-height: 10rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+    $main-color;
+  .navbar-brand {
+    color: $text-color;
+    animation: music 1s linear infinite;
+    animation-direction: alternate;
+    .fas {
+      font-size: 4rem;
+    }
+    @keyframes music {
+      from {
+        transform: rotate(5deg);
+      }
+      to {
+        transform: rotate(-5deg);
+      }
+    }
+    &:hover {
+      filter: drop-shadow(0 1.5rem 1rem rgba(255, 255, 255, 0.5));
+    }
+  }
+  .navbar-nav {
+    padding-left: 15rem;
+    .nav-item .nav-link {
+      font-size: 1.6rem;
+      color: $text-color;
+      text-transform: uppercase;
+      padding-right: 3rem;
+    }
+    .nav-item:last-child > .nav-link {
+      padding-right: 0;
+    }
+  }
+  .nav-item:hover > .nav-link,
+  .navbar-brand:hover {
+    color: $primary-color;
+  }
+  .my_btn {
+    color: $text-color;
+    @include mybtn;
+    &:hover {
+      @include hovereffects;
+    }
+  }
+}
+
+// our main header hero part start
+
+.header_hero {
+  width: 100%;
+  height: 80vh;
+  background-color: $main-color;
+
+  &__text {
+    // width: inherit;
+    height: 80vh;
+    @include content_center(flex-start);
+
+    & h2 {
+      color: $text-color;
+      font-size: 7rem;
+      margin-bottom: 3rem;
+      line-height: 150%;
+      font-weight: 600;
+      & span {
+        color: $primary-color;
+        text-transform: capitalize;
+      }
+    }
+    & p {
+      font-size: 1.8rem;
+      color: $text-color;
+      margin-bottom: 5rem;
+    }
+
+    & .header_text__btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+
+      & a {
+        color: $text-color;
+        @include mybtn;
+        &:hover {
+          @include hovereffects;
+        }
+      }
+      & #btn__2 {
+        margin-left: 2rem;
+        background-color: rgba(255, 255, 255, 0.5);
+        &:hover {
+          @include hovereffects;
+        }
+      }
+    }
+  }
+
+  // images hero part starts
+  &__img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    @include content_center(flex-end);
+
+    filter: drop-shadow(0 1.5rem 1rem rgba(0, 0, 0, 0.8));
+  }
+}
+.header_hero img {
+  position: absolute;
+  width: 100%;
+  top: 10rem;
+}
+
+/* -------------------------------------our 2nd section left side -------------------------------------- */
+.common-section {
+  width: 100%;
+  height: inherit;
+  margin: 10rem 0;
+  & .left-side {
+    align-items: center;
+    & h2 {
+      font-size: 6rem;
+    }
+  }
+}
+/* -------------------------------------our 2nd section right side -------------------------------------- */
+
+.common-section .right-side {
+  & p {
+    width: auto;
+    height: 10rem;
+    text-transform: lowercase;
+    margin-bottom: 3rem;
+  }
+  .common-button {
+    @include mybtn;
+    padding: 2rem 5rem;
+    background-color: $primary-color;
+    margin-top: 5rem;
+    margin-right: 2rem;
+    color: $text-color;
+  }
+}
+
+// section 2
+.section2 {
+  width: 100%;
+  height: inherit;
+  padding: 9rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-color;
+  & .heading1 {
+    padding: 1rem 0 6rem 0;
+    & h2 {
+      color: $text-color;
+      font-size: 7rem;
+      font-weight: 600;
+    }
+  }
+}
+.card {
+  position: relative;
+  height: 40rem;
+  width: 30rem;
+  background-color: #fff;
+  transition: 0.5s;
+  & .face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  & .face1 {
+    text-align: center;
+    padding: 2rem;
+    color: #073668;
+    transition: 0.5s;
+    & h2 {
+      text-transform: uppercase;
+      margin-top: 8rem;
+    }
+    & p {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    & a {
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      color: #073668;
+      border: 0.2rem solid #073668;
+      text-transform: capitalize;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+  }
+  & .face2 {
+    background-color: $primary-color;
+    transition: 0.5s;
+    & h2 {
+      font-size: 12rem;
+      color: #fff;
+      transition: 0.5s;
+    }
+  }
+}
+
+.card:hover .face2 {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  top: 1.5rem;
+  left: 37%;
+  background-color: #fff;
+  border: 0.1rem solid $primary-color;
+}
+.card:hover .face2 h2 {
+  font-size: 3rem;
+  color: $primary-color;
+}
+.card a:hover {
+  background-color: #073668;
+  color: #fff;
+}
+
+// section 3rd
+#section-two {
+  & .left-side {
+    width: 90%;
+  }
+  & .right-side p {
+    text-align: left;
+  }
+  & .concert .icon {
+    width: 100%;
+    height: 120%;
+    border-radius: 20%;
+  }
+  & .col {
+    margin: 5rem 0;
+    padding-right: 3rem;
+  }
+  & p {
+    text-align: center;
+    padding: 1rem 0;
+    font-weight: 900;
+  }
+}
+
+// section4
+#section-three {
+  width: 100%;
+  height: inherit;
+  padding: 9rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-color;
+  & .common-section {
+    width: 80%;
+    height: inherit;
+    margin: 10rem 0;
+  }
+  & .left-side {
+    align-items: center;
+    & h2 {
+      font-size: 6rem;
+      color: $text-color;
+    }
+    & h3 {
+      margin: 3rem 0;
+      font-size: 4rem;
+      font-weight: 900;
+      color: $primary-color;
+    }
+    & p {
+      color: $text-color;
+    }
+    & .common-button {
+      @include mybtn;
+      padding: 2rem 5rem;
+      background-color: $primary-color;
+      margin-top: 3rem;
+      margin-right: 2rem;
+      color: $text-color;
+    }
+  }
+  & .right-side {
+    width: 85%;
+    height: 50vh;
+    border-radius: 10%;
+    background-color: #1c294a;
+    position: relative;
+    & .list {
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+    & .list-icon {
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+    & ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 2rem;
+      padding-bottom: 1rem;
+      color: $text-color;
+    }
+    & i {
+      padding-bottom: 0.8rem;
+      color: $primary-color;
+    }
+  }
+}
+
+// section4
+#section-four {
+  & .left-side {
+    width: 90%;
+  }
+  & .right-side p {
+    text-align: left;
+  }
+  & .concert .icon {
+    width: 70%;
+    height: 70%;
+    border-radius: 100%;
+  }
+
+  & p {
+    text-align: center;
+    padding: 1rem 8rem 0 0;
+    font-weight: 900;
+  }
+  & .new {
+    margin-top: 10rem;
+    margin-bottom: -10rem;
+  }
+}
+
+footer {
+  width: 100%;
+  height: inherit;
+  padding: 9rem 0;
+  background-color: $main-color;
+  .side-left {
+    margin-top: -3rem;
+    & h2 {
+      color: $text-color;
+      font-size: 4rem;
+    }
+    & span {
+      color: $primary-color;
+      font-size: 4rem;
+    }
+    & p {
+      color: rgb(106, 112, 128);
+      font-size: 1rem;
+    }
+    & a {
+      font-size: 2rem;
+      color: rgb(106, 112, 128);
+      padding-right: 3rem;
+    }
+  }
+  .side-right {
+    width: 100%;
+    & h3 {
+      font-size: 2rem;
+      color: $text-color;
+      margin-bottom: 2rem;
+    }
+    & ul {
+      font-size: 1.5rem;
+      color: rgb(106, 112, 128);
+      margin-left: -2rem;
+    }
+  }
+}
+
+// responsive start
+
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+  .main_header {
+    line-height: 5rem;
+    text-align: center;
+    padding: 0 2rem;
+
+    & .navbar-nav {
+      padding-left: 3rem;
+      & .nav-item .nav-link {
+        padding-right: 0%;
+      }
+    }
+    .navbar .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .header_hero__text .header_text__btn {
+    display: block;
+    margin: 0 auto;
+  }
+  .header_hero__text .header_text__btn a {
+    display: block;
+    text-align: center;
+  }
+  .header_hero__text .header_text__btn #btn__2 {
+    margin-top: 2rem;
+    margin-left: 0%;
+  }
+  .header_hero__img {
+    display: none;
+  }
+  .common-section .right-side .common-button {
+    margin-top: 15rem;
+  }
+  .common-section .left-side {
+    margin-bottom: 2rem;
+  }
+  .common-section .right-side p {
+    margin-bottom: 14rem;
+  }
+  #section-two .concert .icon {
+    width: 70%;
+    height: 90%;
+    margin-left: 5rem;
+  }
+  #section-three .right-side ul {
+    padding-left: 0;
+  }
+  #section-four .concert .icon {
+    width: 50%;
+    height: 60%;
+    margin-top: 3rem;
+    margin-left: 8rem;
+  }
+  #section-four .concert .col p {
+    margin-left: 5.5rem;
+  }
+  #section-four .concert .arijit {
+    height: 60%;
+  }
+  #section-four .concert .atif {
+    height: 50%;
+  }
+  #section-four .new .atifp {
+    margin-bottom: 4rem;
+  }
+  footer .side-right h3 {
+    font-size: 1.5rem;
+  }
+  footer .side-right {
+    margin-top: 5rem;
+  }
+}
